@@ -1,0 +1,137 @@
+html {height: 100%;}
+
+body {height: 100%;
+      margin: 0; }
+
+#mainCanvas {
+  height: 95%;
+  background-color: lightyellow;}
+
+/* Header */
+#headerHolder {
+  width: 100%;
+  height: 22%;
+  margin: 0;}
+
+#headerImg {
+  height: 100%;
+  width: 18%;
+  float: left;}
+
+#headerMonthHolder {
+  height: 100%;
+  width: 82%;
+  float: left;
+  background-color: lightyellow;}
+
+#headerMonth {
+    height: 100%;
+    width: 100%;
+    background-color: tan;
+  }
+
+.title {
+  color: #684A4A;
+  font-size: 250%;
+  float: left;}
+
+#monthName {
+  margin: 0;
+  padding: 4% 0 0 29%;
+}
+
+
+.block{float:left;
+      height: 100%;
+      margin: 0;
+   }
+
+
+#block2 {
+  text-align: center;
+  padding-left: 20%;
+  padding-top: 1%;
+  width: 100%; }
+
+
+.activeButton {
+  background-color: #C3CA9A;
+  color:#684A4A;
+}
+
+.disableButton {
+  background-color: silver;
+  color: gray;
+}
+
+.arrow {
+  margin-top: 0%;
+  font-size: 200%;
+  margin-bottom: 30%;
+
+}
+
+/* Content */
+#content {
+  height: 78%;
+  width: 100%;
+          }
+
+#sidebar {background-color: peachpuff;
+  width: 18%;
+  height: 100%;
+  float: left;}
+
+#tableHolder {
+  float: left;
+  width: 82%;
+  height:100%;
+  }
+
+#tableContent {
+  /*table-layout: fixed;*/
+  /*width: 90%;*/
+  height: 90%;
+  padding: 0;
+  margin-left: 26.5%;
+  margin-top: 3%;
+  /*column-count: 4;*/
+  border-color: darkolivegreen;
+  border-style: solid;
+  border-width: thin;
+}
+
+#tableHeader {
+  height: 10%;
+  font-family: monospace;
+  font-size:large;
+  background-color: darkkhaki;
+  color: #6E5943;
+  }
+
+.teText {
+  color: darkslategray;
+  /*background-color: #F6EDE4;*/
+  /*margin: 0;
+  padding-left: 1%;*/
+  width: 100px;
+  heigth: 100px;
+  background-image: url("Pics/cover.jpg");
+  background-size: 100% 100%;
+  }
+
+
+
+
+
+/* Footer */
+footer {background-color: papayawhip;
+        height: 5%;
+        min-height: 25px;}
+
+#footerText {margin: 0;
+            text-align: right;
+            padding-top: 0.8%;
+            padding-right: 4.5%;
+            color: rgba(22,109,33,0.66);
+            }
