@@ -5,6 +5,8 @@ To play open index.html in browser.
 
 Begin by clicking on any two cells in the grid. If the uncovered pictures match, the pictures will remain flipped; otherwise they will flip back to the cover picture. The objective of the game is to uncover all the picture matches.  
 
+Below is a sample game where 2 pairs of cards were matched. 
+
 ![Memory Game - Sample Game](screenshot.png)
 
 
