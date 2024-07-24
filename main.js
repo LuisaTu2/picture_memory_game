@@ -74,7 +74,8 @@ function clickHandler() {
           if(areSameAnimal(firstImageUrl, secondImageUrl)) {
             countMatches++;
             if(countMatches === 8) {
-              setTimeout(function(){alert('Congratulations, you won! You completed the puzzle in ' + (end.getTime() - start.getTime())/1000 + ' seconds.')},1000);              end = new Date();
+              setTimeout(function(){alert('Congratulations, you won! You completed the puzzle in ' + (end.getTime() - start.getTime())/1000 + ' seconds.')}, 100);              
+              end = new Date();
             }
           }
           else {
@@ -82,7 +83,7 @@ function clickHandler() {
             setTimeout(function(){
               flipBothBack(firstImageElt, secondImageElt);
               flipBackInProgress = false;
-            },1000);
+            }, 700);
           }
          }
   }

@@ -1,24 +1,27 @@
-html {height: 100%;}
-
-body {height: 100%;
-      margin: 0; }
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: papayawhip;
+  color: #684A4A;
+}
 
 #mainCanvas {
-  height: 95%;
-  background-color: lightyellow;}
+  /* background-color: lightyellow; */
+  min-width: 300px;
+}
 
 /* Header */
-#headerHolder {
+#header {
   width: 100%;
-  height: 22%;
-  margin: 0;}
+  height: 150px;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+}
 
-#headerImg {
-  height: 100%;
-  width: 18%;
-  float: left;}
 
-#headerMonthHolder {
+/* #headerMonthHolder {
   height: 100%;
   width: 82%;
   float: left;
@@ -28,17 +31,21 @@ body {height: 100%;
     height: 100%;
     width: 100%;
     background-color: tan;
-  }
+  } */
 
 .title {
-  color: #684A4A;
-  font-size: 250%;
-  float: left;}
+  padding: 0px;
+  margin-top: 60px;
+  margin-left: 100px;
+  font-size: 50px;
+  font-weight: 550;
+  /* float: left; */
+}
 
-#monthName {
+/* #monthName {
   margin: 0;
   padding: 4% 0 0 29%;
-}
+} */
 
 
 .block{float:left;
@@ -73,65 +80,88 @@ body {height: 100%;
 
 /* Content */
 #content {
-  height: 78%;
+  /* height: 78%; */
   width: 100%;
+  margin-left: 100px;
           }
 
-#sidebar {background-color: peachpuff;
+.instructions{
+  width: 60%;
+  margin: 30px 100px 0px 0px;
+  font-size: 30px;
+}
+
+/* #sidebar {background-color: peachpuff;
   width: 18%;
   height: 100%;
-  float: left;}
+  float: left;} */
 
-#tableHolder {
+/* #tableHolder {
   float: left;
   width: 82%;
   height:100%;
-  }
+  } */
 
-#tableContent {
+#table {
   /*table-layout: fixed;*/
   /*width: 90%;*/
-  height: 90%;
+  /* height: 90%; */
   padding: 0;
-  margin-left: 26.5%;
-  margin-top: 3%;
+  margin: 100px 0px;
   /*column-count: 4;*/
-  border-color: darkolivegreen;
+  border-color: rgb(189, 194, 180);
   border-style: solid;
   border-width: thin;
 }
 
-#tableHeader {
+/* #tableHeader {
   height: 10%;
   font-family: monospace;
   font-size:large;
   background-color: darkkhaki;
   color: #6E5943;
-  }
+  } */
 
 .teText {
   color: darkslategray;
+  border-color: rgb(189, 194, 180);
   /*background-color: #F6EDE4;*/
   /*margin: 0;
   padding-left: 1%;*/
-  width: 100px;
-  heigth: 100px;
+  width: 120px;
+  height: 120px;
   background-image: url("Pics/cover.jpg");
   background-size: 100% 100%;
-  }
-
-
+}
 
 
 
 /* Footer */
-footer {background-color: papayawhip;
-        height: 5%;
-        min-height: 25px;}
+.footer {
+  /* width: 100%; */
+  /* color: rgba(22,109,33,0.66); */
+  /* background-color: papayawhip; */
+  width: 60%;
+  margin: 100px;
+  /* padding: 50px; */
+  font-size: 25px;
+}
 
-#footerText {margin: 0;
-            text-align: right;
-            padding-top: 0.8%;
-            padding-right: 4.5%;
-            color: rgba(22,109,33,0.66);
-            }
+.note {
+  font-style: italic;
+}
+
+.made {
+  margin-top: 30px;
+  color: rgba(22,109,33,0.66);
+  background-color: papayawhip;
+}
+
+.made a {
+  text-decoration: none;
+  color: rgba(22,109,33,0.66);
+}
+
+#headerImg {
+  display: none;
+}

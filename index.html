@@ -6,91 +6,84 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
+    
     <div id="mainCanvas">
+      <div id="header">
+          <img id="headerImg" src="Pics/squirrel.jpg" alt="Beaver - let's play a game!" >
+          <!-- <div id="headerMonthHolder"> -->
+              <!-- <div id="headerMonth"> -->
+          <div class="title" id="monthName">Picture Memory Game</div>
+              <!-- </div> -->
+          <!-- </div> -->
+      </div>
 
-        <div id="headerHolder">
-            <img id="headerImg" src="Pics/squirrel.jpg" alt="Beaver - let's play a game!" >
-            <div id="headerMonthHolder">
-                <div id="headerMonth">
-                    <div class="title" id="monthName">Picture Memory Game</div>
-                </div>
-            </div>
-        </div>
+      <div id="content">
+          <div class="instructions">
+            Each tile hides a picture. There are 8 pairs of pictures to be matched. Uncover two tiles at a time until you match each pair to win the game!
+          </div>
+          <!-- <div id="tableHolder"> -->
+            <table id="table">
 
-        <div id="content">
-            <div id="sidebar">
+              <tr id="tr1">
+                <td id="te11" class = 'teText'> </td>
+                <td id="te12" class = 'teText'> </td>
+                <td id="te13" class = 'teText'> </td>
+                <td id="te14" class = 'teText'> </td>
+              </tr>
 
-            </div>
+              <tr id="tr2">
+                <td id="te21" class = 'teText'>  </td>
+                <td id="te22" class = 'teText'>  </td>
+                <td id="te23" class = 'teText'>  </td>
+                <td id="te24" class = 'teText'>  </td>
+              </tr>
 
-            <div id="tableHolder">
-              <table id="tableContent">
+              <tr id="tr3">
+                <td id="te31" class = 'teText'>  </td>
+                <td id="te32" class = 'teText'>  </td>
+                <td id="te33" class = 'teText'>  </td>
+                <td id="te34" class = 'teText'>  </td>
+              </tr>
 
+              <tr id="tr4">
+                <td id="te41" class = 'teText'>  </td>
+                <td id="te42" class = 'teText'>  </td>
+                <td id="te43" class = 'teText'>  </td>
+                <td id="te44" class = 'teText'>  </td>
+              </tr>
 
-                <tr id="tr1">
-                  <td id="te11" class = 'teText'> </td>
-                  <td id="te12" class = 'teText'> </td>
-                  <td id="te13" class = 'teText'> </td>
-                  <td id="te14" class = 'teText'> </td>
-                </tr>
+              <!-- <tr id="tr5">
+                <td id="te51" class = 'teText'>  </td>
+                <td id="te52" class = 'teText'>  </td>
+                <td id="te53" class = 'teText'>  </td>
+                <td id="te54" class = 'teText'>  </td>
+                <td id="te55" class = 'teText'>  </td>
+              </tr> -->
 
-                <tr id="tr2">
-                  <td id="te21" class = 'teText'>  </td>
-                  <td id="te22" class = 'teText'>  </td>
-                  <td id="te23" class = 'teText'>  </td>
-                  <td id="te24" class = 'teText'>  </td>
-                </tr>
+              <!-- <tr id="tr6">
+                <td id="te61" class = 'teText'>  </td>
+                <td id="te62" class = 'teText'>  </td>
+                <td id="te63" class = 'teText'>  </td>
+                <td id="te64" class = 'teText'>  </td>
+                <td id="te65" class = 'teText'>  </td>
+                <td id="te66" class = 'teText'>  </td>
+                <td id="te67" class = 'teText'>  </td>
+              </tr> -->
+              
 
-                <tr id="tr3">
-                  <td id="te31" class = 'teText'>  </td>
-                  <td id="te32" class = 'teText'>  </td>
-                  <td id="te33" class = 'teText'>  </td>
-                  <td id="te34" class = 'teText'>  </td>
-                </tr>
-
-                <tr id="tr4">
-                  <td id="te41" class = 'teText'>  </td>
-                  <td id="te42" class = 'teText'>  </td>
-                  <td id="te43" class = 'teText'>  </td>
-                  <td id="te44" class = 'teText'>  </td>
-                </tr>
-
-                <!-- <tr id="tr5">
-                  <td id="te51" class = 'teText'>  </td>
-                  <td id="te52" class = 'teText'>  </td>
-                  <td id="te53" class = 'teText'>  </td>
-                  <td id="te54" class = 'teText'>  </td>
-                  <td id="te55" class = 'teText'>  </td>
-                </tr> -->
-
-                <!-- <tr id="tr6">
-                  <td id="te61" class = 'teText'>  </td>
-                  <td id="te62" class = 'teText'>  </td>
-                  <td id="te63" class = 'teText'>  </td>
-                  <td id="te64" class = 'teText'>  </td>
-                  <td id="te65" class = 'teText'>  </td>
-                  <td id="te66" class = 'teText'>  </td>
-                  <td id="te67" class = 'teText'>  </td>
-                </tr> -->
+            </table>
+          <!-- </div> -->
 
 
-              </table>
-
-            </div>
-
-        </div>
+      </div>
     </div>
 
+    <div class="footer">
+      <div class="note"> NOTE: this was my very first project! I am working on a refactor but in the meantime the pictures are a bit slow to load, please be patient :)</div>
+      <div class="made"> made with <span>💚 </span> in SF <span>🌉 </span> by <a href="https://github.com/LuisaTu2">🐰</a> </div>
+    </div>
 
-
-
-    <footer>
-        <p id="footerText">Crafted by LuisaTu2</p>
-    </footer>
-
-    <script type="text/javascript" src="main.js">
-
-    </script>
+    <script type="text/javascript" src="main.js"></script>
 
   </body>
 </html>
