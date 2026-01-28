@@ -1,3 +1,4 @@
+const pairsCount = 8;
 let flipCount = 0;
 let countMatches = 0;
 
@@ -9,27 +10,56 @@ let flipBackInProgress = false;
 let start = null;
 let end = null;
 
-let picChoices = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
+// let picChoices = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
 
-// Assign an event handler and a front and back to each card
-for (i = 1; i <= 4; i++) {
-  for (j = 1; j <= 4; j++) {
-    const cardId = "te" + i + j;
-    const card = document.getElementById(cardId);
-    card.addEventListener("click", clickHandler);
+const resetBtn = document.getElementById("resetBtn");
+resetBtn.addEventListener("click", () => {
+  resetGame();
+});
 
-    card.innerHTML = `
+const newGameBtn = document.getElementById("newGameBtn");
+newGameBtn.addEventListener("click", () => {
+  resetGame();
+  initializeGame();
+});
+
+initializeGame();
+
+function getShuffledPics() {
+  let pics = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
+  const pictureIds = [];
+  for (let i = pairsCount * 2; i > 0; i--) {
+    let rand = Math.floor(Math.random() * pics.length);
+    let picId = pics.splice(rand, 1);
+    pictureIds.push(picId);
+  }
+  return pictureIds;
+}
+
+function initializeGame() {
+  const pictureIds = getShuffledPics();
+  let k = 0;
+  for (i = 1; i <= 4; i++) {
+    for (j = 1; j <= 4; j++) {
+      const card = document.getElementById("te" + i + j);
+
+      // add event listener
+      card.addEventListener("click", clickHandler);
+
+      // add front and back cards
+      card.innerHTML = `
       <div class="teText-inner">
         <div class="teText-front"></div>
         <div class="teText-back"></div>
       </div>
     `;
-    let rand = Math.floor(Math.random() * picChoices.length);
-    let picId = picChoices.splice(rand, 1);
-    card.dataset.pictureId = picId;
-    card
-      .querySelector(".teText-back")
-      .style.setProperty("--img", `url(Pics/${picId}.jpg)`);
+      const pictureId = pictureIds[k];
+      card.dataset.pictureId = pictureId;
+      card
+        .querySelector(".teText-back")
+        .style.setProperty("--img", `url(Pics/${pictureId}.jpg)`);
+      k++;
+    }
   }
 }
 
@@ -56,6 +86,9 @@ function clickHandler() {
   secondCard = this;
   if (firstCard.dataset.pictureId === secondCard.dataset.pictureId) {
     countMatches++;
+    flipCount = 0;
+    firstCard = null;
+    secondCard = null;
 
     if (countMatches === 8) {
       end = new Date();
@@ -75,10 +108,25 @@ function clickHandler() {
     setTimeout(() => {
       card1.classList.remove("flipped");
       card2.classList.remove("flipped");
+      flipCount = 0;
+      firstCard = null;
+      secondCard = null;
       flipBackInProgress = false;
     }, 300);
   }
-  flipCount = 0;
+}
+
+function resetGame() {
+  document
+    .querySelectorAll(".teText")
+    .forEach((card) => card.classList.remove("flipped"));
+
   firstCard = null;
   secondCard = null;
+  flipCount = 0;
+  countMatches = 0;
+  flipBackInProgress = false;
+
+  start = null;
+  end = null;
 }
