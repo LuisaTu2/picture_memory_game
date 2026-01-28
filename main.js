@@ -10,8 +10,6 @@ let flipBackInProgress = false;
 let start = null;
 let end = null;
 
-// let picChoices = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
-
 const resetBtn = document.getElementById("resetBtn");
 resetBtn.addEventListener("click", () => {
   resetGame();
@@ -21,6 +19,13 @@ const newGameBtn = document.getElementById("newGameBtn");
 newGameBtn.addEventListener("click", () => {
   resetGame();
   initializeGame();
+});
+
+const themeSelect = document.getElementById("themeSelect");
+themeSelect.value = "animals";
+themeSelect.addEventListener("change", () => {
+  const selectedTheme = themeSelect.value;
+  updatePictures();
 });
 
 initializeGame();
@@ -36,9 +41,24 @@ function getShuffledPics() {
   return pictureIds;
 }
 
-function initializeGame() {
+function updatePictures() {
   const pictureIds = getShuffledPics();
-  let k = 0;
+  k = 0;
+  for (i = 1; i <= 4; i++) {
+    for (j = 1; j <= 4; j++) {
+      const card = document.getElementById("te" + i + j);
+      const pictureId = pictureIds[k];
+      card.dataset.pictureId = pictureId;
+      const themedUrl = applyTheme(themeSelect.value);
+      card
+        .querySelector(".teText-back")
+        .style.setProperty("--img", `url(pics${themedUrl}${pictureId}.jpg)`);
+      k++;
+    }
+  }
+}
+
+function initializeGame() {
   for (i = 1; i <= 4; i++) {
     for (j = 1; j <= 4; j++) {
       const card = document.getElementById("te" + i + j);
@@ -53,19 +73,15 @@ function initializeGame() {
         <div class="teText-back"></div>
       </div>
     `;
-      const pictureId = pictureIds[k];
-      card.dataset.pictureId = pictureId;
-      card
-        .querySelector(".teText-back")
-        .style.setProperty("--img", `url(Pics/${pictureId}.jpg)`);
-      k++;
     }
   }
+  updatePictures();
 }
 
 function clickHandler() {
   if (start === null) {
     start = new Date();
+    themeSelect.disabled = true;
   }
 
   if (
@@ -129,4 +145,14 @@ function resetGame() {
 
   start = null;
   end = null;
+  themeSelect.disabled = false;
+}
+
+function applyTheme(theme) {
+  switch (theme) {
+    case "fall":
+      return "/fall/";
+    case "animals":
+      return "/";
+  }
 }
